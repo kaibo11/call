@@ -50,6 +50,16 @@ void MainWindow::on_calButton_clicked()
          double decreasePercentage = ((result - price1) / price1) * 100.0;
          QString percentageString = QString("-%1%").arg(decreasePercentage, 0, 'f', 2);
          ui->rate->setText(percentageString);
+
+
+         // 设置出货价格
+         double qingcangjia = result*1.01;
+         ui->qingcangjiage->setText(QString::number(qingcangjia));
+
+
+         // 设置尾盘补仓价格
+         ui->bucangjiage->setText(QString::number(price1*0.95));
+         return;
         return;
     }
     double cost2 = ui->cost2->text().toInt();
@@ -63,6 +73,16 @@ void MainWindow::on_calButton_clicked()
         double decreasePercentage = ((result - price2) / price2) * 100.0;
         QString percentageString = QString("-%1%").arg(decreasePercentage, 0, 'f', 2);
         ui->rate->setText(percentageString);
+
+
+        // 设置出货价格
+        double qingcangjia = result*1.01;
+        ui->qingcangjiage->setText(QString::number(qingcangjia));
+
+
+        // 设置尾盘补仓价格
+        ui->bucangjiage->setText(QString::number(price2*0.95));
+        return;
         return;
     }
 
@@ -77,6 +97,15 @@ void MainWindow::on_calButton_clicked()
         double decreasePercentage = ((result - price3) / price3) * 100.0;
         QString percentageString = QString("-%1%").arg(decreasePercentage, 0, 'f', 2);
         ui->rate->setText(percentageString);
+
+
+        // 设置出货价格
+        double qingcangjia = result*1.01;
+        ui->qingcangjiage->setText(QString::number(qingcangjia));
+
+
+        // 设置尾盘补仓价格
+        ui->bucangjiage->setText(QString::number(price3*0.95));
         return;
     }
 
@@ -90,6 +119,15 @@ void MainWindow::on_calButton_clicked()
         double decreasePercentage = ((result - price4) / price4) * 100.0;
         QString percentageString = QString("-%1%").arg(decreasePercentage, 0, 'f', 2);
         ui->rate->setText(percentageString);
+
+
+        // 设置出货价格
+        double qingcangjia = result*1.01;
+        ui->qingcangjiage->setText(QString::number(qingcangjia));
+
+
+        // 设置尾盘补仓价格
+        ui->bucangjiage->setText(QString::number(price4*0.95));
         return;
     }
 
@@ -97,14 +135,22 @@ void MainWindow::on_calButton_clicked()
     double price5 = ui->price5->text().toDouble();
     costall+= cost5;
 
-
+   // 设置持仓成本，====回本价格
    double resultAll = costall/(cost1/price1 + cost2/price2 + cost3/price3 + cost4/price4 + cost5/price5);
     ui->costAndRate->setText(QString::number(resultAll));
 
+   // 设置涨多少回本，也就是说亏了百分之多少。
    double decreasePercentage = ((resultAll - price5) / price5) * 100.0;
    QString percentageString = QString("-%1%").arg(decreasePercentage, 0, 'f', 2);
    ui->rate->setText(percentageString);
 
+   // 设置出货价格
+   double qingcangjia = resultAll*1.01;
+   ui->qingcangjiage->setText(QString::number(qingcangjia));
+
+
+   // 设置尾盘补仓价格
+   ui->bucangjiage->setText(QString::number(price5*0.95));
 
 }
 
