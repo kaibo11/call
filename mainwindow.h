@@ -20,6 +20,8 @@ private slots:
 
     void on_clearPrice_clicked();
 
+    void on_clearButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
