@@ -154,3 +154,24 @@ void MainWindow::on_calButton_clicked()
 
 }
 
+
+void MainWindow::on_clearPrice_clicked()
+{
+    ui->price1->clear();
+    ui->price2->clear();
+    ui->price3->clear();
+    ui->price4->clear();
+    ui->price5->clear();
+}
+
+
+void MainWindow::on_clearButton_clicked()
+{
+    ui->price1->clear();
+    ui->price2->clear();
+    ui->price3->clear();
+    ui->price4->clear();
+    ui->price5->clear();
+
+}
+

@@ -18,6 +18,8 @@ public:
 private slots:
     void on_calButton_clicked();
 
+    void on_clearPrice_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
